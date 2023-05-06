@@ -1,18 +1,11 @@
 version: '3.8'
 services:
   client:
-    #image: "1"
-    build: ./my-app
-    volumes:
-      - ./my-app/nginx/nginx.conf:/etc/nginx/nginx.conf
+    build: ./front
     ports:
       - "8080:80"
-      #context: H:\source\repos\WeatherApp\reactapp
-      #dockerfile: H:\source\repos\WeatherApp\reactapp
-    #ports:
-    #  - "3001:80"
   webapi:
-    build: .\webapi
+    build: ./webapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
 
